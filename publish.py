@@ -18,7 +18,10 @@ if len(tags) <= 0:
 
 versions = []
 for tag in tags:
-    version = list(map(lambda v: int(v), tag['name'].split('_')[1].split('.')))
+    try:
+        version = list(map(lambda v: int(v), tag.name.split('_')[1].split('.')))
+    except:
+        version = list(map(lambda v: int(v), tag['name'].split('_')[1].split('.')))
     versions.append(version)
 
 getVersion = versions[-1:][0]
