@@ -1,0 +1,39 @@
+# Copyright 2019 by Kurt Rathjen. All Rights Reserved.
+#
+# This library is free software: you can redistribute it and/or modify it 
+# under the terms of the GNU Lesser General Public License as published by 
+# the Free Software Foundation, either version 3 of the License, or 
+# (at your option) any later version. This library is distributed in the 
+# hope that it will be useful, but WITHOUT ANY WARRANTY; without even the 
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+# See the GNU Lesser General Public License for more details.
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library. If not, see <http://www.gnu.org/licenses/>.
+
+import sgtk
+
+APP = sgtk.platform.current_engine()
+PROJECT_PATH = APP.tank.project_path
+CONFIG = APP.context.tank.pipeline_configuration
+
+url = APP.site_cache_location
+url = url.split('\\')
+index = url.index('Shotgun')
+domain = url[(index + 1)]
+
+__version__ = "{} | {}".format(domain.upper(), CONFIG.get_name())
+
+def version():
+    """
+    Return the current version of the Studio Library
+
+    :rtype: str
+    """
+    return __version__
+
+from studiolibrary import config
+from studiolibrary import resource
+from studiolibrary.utils import *
+from studiolibrary.library import Library
+from studiolibrary.libraryitem import LibraryItem
+from studiolibrary.main import main

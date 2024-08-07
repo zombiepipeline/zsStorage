@@ -1,0 +1,22 @@
+*{
+ padding:5px;
+}
+
+QPushButton {
+    border:none;
+    background-color:#222222;
+    padding:10px;
+}
+
+QPushButton:hover {
+}
+
+QPushButton:hover:!pressed{
+}
+
+QLabel {
+}
+
+QSpinBox, QLineEdit, QComboBox{
+
+}

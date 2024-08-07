@@ -1,0 +1,11 @@
+QLineEdit, QPushButton{
+    padding: 0 6px;
+}
+
+QLineEdit:disabled, QComboBox:disabled, QPushButton:disabled{
+    color:#e2e2e2;
+}
+
+QTreeWidget::item{
+    padding:5px 10px;
+}
